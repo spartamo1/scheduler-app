@@ -1,3 +1,17 @@
 spring:
   application:
     name: scheduler-app
+
+  datasource:
+    url: jdbc:mysql://localhost:3316/scheduler
+    username: root
+    password: scheduler
+    pool-size: 100
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs-json
+  swagger-ui:
+    path: /swagger-ui
+    url: /api-docs-json
