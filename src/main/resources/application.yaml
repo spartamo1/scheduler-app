@@ -6,7 +6,8 @@ spring:
     url: jdbc:mysql://localhost:3316/scheduler
     username: root
     password: scheduler
-    pool-size: 100
+    hikari:
+      maximum-pool-size: 10
 
 springdoc:
   api-docs:
