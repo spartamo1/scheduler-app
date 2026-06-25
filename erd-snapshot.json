@@ -1,0 +1,252 @@
+{
+  "entityData": [
+    {
+      "_id": "ux6XNuABSctHoBBnQ",
+      "_diagramId": "DLDFQkDN4ixX5wnbD",
+      "position": {
+        "x": 450,
+        "y": 340
+      },
+      "name": "Schedule",
+      "pName": "schedule",
+      "fields": [
+        {
+          "_id": "hMAqSkCW4iQqHEAKG",
+          "name": "title",
+          "pName": "Field",
+          "domain": "",
+          "type": "varchar(100)",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "gXiK53XyYqQBDHK8L",
+          "name": "content",
+          "pName": "Field2",
+          "domain": "",
+          "type": "text",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "XPLpW7wgNgtwXk9wm",
+          "name": "created_by",
+          "pName": "Field3",
+          "domain": "",
+          "type": "varchar(100)",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "hRXaBfP4Xoa2fAjmp",
+          "name": "password",
+          "pName": "Field4",
+          "domain": "",
+          "type": "varchar(100)",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "hWi8brQd7ZQh2PPBT",
+          "name": "created_at",
+          "pName": "Field5",
+          "domain": "",
+          "type": "datetime",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "oHGYJNFtkvFYfT6RK",
+          "name": "updated_at",
+          "pName": "Field6",
+          "domain": "",
+          "type": "datetime",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        }
+      ],
+      "keys": {
+        "pks": [
+          {
+            "_id": "4rMKW5oLBqGwgyrEH",
+            "name": "id",
+            "pName": "Key",
+            "domain": "PK",
+            "type": "int",
+            "defaultValue": "",
+            "isAllowNull": false,
+            "comment": "",
+            "relEntity": null,
+            "relFieldId": null,
+            "relType": null,
+            "relGroupId": null
+          }
+        ],
+        "fks": []
+      },
+      "color": "rgba(10, 10, 10, 0.5)"
+    },
+    {
+      "_id": "bTGq4ivzEfFRZMP2E",
+      "_diagramId": "DLDFQkDN4ixX5wnbD",
+      "position": {
+        "x": 900,
+        "y": 340
+      },
+      "name": "Comment",
+      "pName": "comment",
+      "fields": [
+        {
+          "_id": "26m53HuDzxB4ByQqH",
+          "name": "schedule_id",
+          "pName": "FK",
+          "domain": "FK",
+          "type": "int",
+          "defaultValue": "",
+          "isAllowNull": false,
+          "comment": "",
+          "relEntity": "ux6XNuABSctHoBBnQ",
+          "relFieldId": "4rMKW5oLBqGwgyrEH",
+          "relType": "MANY",
+          "relGroupId": "TZqMsPez2qA3iakXR"
+        },
+        {
+          "_id": "cxaHWTdkZ869GLT4m",
+          "name": "content",
+          "pName": "Field",
+          "domain": "",
+          "type": "text",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "fPJwmRkCCpqrwypqh",
+          "name": "created_by",
+          "pName": "Field2",
+          "domain": "",
+          "type": "varchar(100)",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "jvprMiQbHWWoJ38oR",
+          "name": "password",
+          "pName": "Field3",
+          "domain": "",
+          "type": "varchar(100)",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "F4AhisqatxPXQ6SwJ",
+          "name": "created_at",
+          "pName": "Field4",
+          "domain": "",
+          "type": "datetime",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        },
+        {
+          "_id": "kpLwKNMhrX2j32AkM",
+          "name": "updated_at",
+          "pName": "Field5",
+          "domain": "",
+          "type": "datetime",
+          "defaultValue": "",
+          "isAllowNull": true,
+          "comment": "",
+          "relEntity": null,
+          "relFieldId": null,
+          "relType": null,
+          "relGroupId": null
+        }
+      ],
+      "keys": {
+        "pks": [
+          {
+            "_id": "epSorG24KbaJaYB65",
+            "name": "id",
+            "pName": "Key",
+            "domain": "PK",
+            "type": "int",
+            "defaultValue": "",
+            "isAllowNull": false,
+            "comment": "",
+            "relEntity": null,
+            "relFieldId": null,
+            "relType": null,
+            "relGroupId": null
+          }
+        ],
+        "fks": []
+      },
+      "color": "rgba(10, 10, 10, 0.5)"
+    }
+  ],
+  "memoData": [],
+  "domainData": [
+    {
+      "name": "PK",
+      "type": "int",
+      "defaultValue": ""
+    },
+    {
+      "name": "FK",
+      "type": "int",
+      "defaultValue": ""
+    }
+  ],
+  "createdAt": "2026-06-25T06:40:20.511Z",
+  "creatorName": "progr kj",
+  "creatorThumb": "https://lh3.googleusercontent.com/a/ACg8ocLru39IVZqDOIL-f3rSvj_AhtSBQ_e8yClKFPyfSzqy4Th8pw=s96-c"
+}
