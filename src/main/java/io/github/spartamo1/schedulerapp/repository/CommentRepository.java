@@ -1,7 +1,6 @@
 package io.github.spartamo1.schedulerapp.repository;
 
 import io.github.spartamo1.schedulerapp.entity.Comment;
-import io.github.spartamo1.schedulerapp.entity.Schedule;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

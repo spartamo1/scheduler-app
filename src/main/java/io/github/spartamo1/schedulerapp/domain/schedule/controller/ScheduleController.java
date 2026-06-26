@@ -49,8 +49,8 @@ public class ScheduleController {
 
     @PutMapping("/{id}")
     public ScheduleDto modify(
-        @PathVariable Integer id,
-        @RequestBody @Valid CreateScheduleDto createScheduleDto
+            @PathVariable Integer id,
+            @RequestBody @Valid CreateScheduleDto createScheduleDto
     ) {
         return scheduleService.update(id, createScheduleDto);
     }
