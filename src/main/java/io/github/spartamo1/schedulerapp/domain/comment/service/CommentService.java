@@ -25,6 +25,8 @@ public class CommentService {
 
     @Transactional
     public CommentDto create(Integer scheduleId, CreateCommentDto createCommentDto) {
+        validateCreateCommentDto(createCommentDto);
+
         Schedule schedule = scheduleRepository.findById(scheduleId)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
@@ -40,6 +42,17 @@ public class CommentService {
         comment.setSchedule(schedule);
         Comment savedComment = commentRepository.save(comment);
         return commentMapper.toCommentDto(savedComment);
+    }
+
+    private void validateCreateCommentDto(CreateCommentDto dto) {
+        if (dto.getContent() == null || dto.getContent().isBlank())
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "댓글 내용은 필수입니다");
+
+        if (dto.getCreatedBy() == null || dto.getCreatedBy().isBlank())
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "댓글 작성자는 필수입니다");
+
+        if (dto.getContent().length() > 100)
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "댓글 내용은 100자 이하로 작성해야 합니다");
     }
 
 }
