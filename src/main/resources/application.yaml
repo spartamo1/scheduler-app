@@ -9,6 +9,12 @@ spring:
     hikari:
       maximum-pool-size: 10
 
+  jpa:
+    open-in-view: true
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+
 springdoc:
   api-docs:
     enabled: true
