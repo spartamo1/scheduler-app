@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -22,6 +24,11 @@ public class CommentService {
 
     private final CommentMapper commentMapper;
     private final ScheduleRepository scheduleRepository;
+
+    public List<CommentDto> getAllComments(Integer id) {
+        List<Comment> commentList = commentRepository.findAllByScheduleId(id);
+        return commentList.stream().map(commentMapper::toCommentDto).toList();
+    }
 
     @Transactional
     public CommentDto create(Integer scheduleId, CreateCommentDto createCommentDto) {

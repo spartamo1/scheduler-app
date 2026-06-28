@@ -1,13 +1,11 @@
 package io.github.spartamo1.schedulerapp.domain.schedule.service;
 
 import io.github.spartamo1.schedulerapp.domain.comment.dto.CommentDto;
-import io.github.spartamo1.schedulerapp.domain.comment.mapper.CommentMapper;
+import io.github.spartamo1.schedulerapp.domain.comment.service.CommentService;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.CreateScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.ScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.mapper.ScheduleMapper;
-import io.github.spartamo1.schedulerapp.entity.Comment;
 import io.github.spartamo1.schedulerapp.entity.Schedule;
-import io.github.spartamo1.schedulerapp.repository.CommentRepository;
 import io.github.spartamo1.schedulerapp.repository.ScheduleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
@@ -24,10 +22,8 @@ import java.util.List;
 public class ScheduleService {
 
     private final ScheduleRepository scheduleRepository;
-
     private final ScheduleMapper scheduleMapper;
-    private final CommentRepository commentRepository;
-    private final CommentMapper commentMapper;
+    private final CommentService commentService;
 
     private List<ScheduleDto> getAll() {
         return scheduleRepository.findAll(Sort.by(Sort.Direction.DESC, "updatedAt")).stream()
@@ -49,15 +45,10 @@ public class ScheduleService {
         Schedule schedule = scheduleRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Schedule not found with id: " + id));
 
-        List<CommentDto> comments = getAllComments(id);
+        List<CommentDto> comments = commentService.getAllComments(id);
         ScheduleDto scheduleDto = scheduleMapper.toScheduleDto(schedule);
         scheduleDto.setComments(comments);
         return scheduleDto;
-    }
-
-    private List<CommentDto> getAllComments(Integer id) {
-        List<Comment> commentList = commentRepository.findAllByScheduleId(id);
-        return commentList.stream().map(commentMapper::toCommentDto).toList();
     }
 
     @Transactional
