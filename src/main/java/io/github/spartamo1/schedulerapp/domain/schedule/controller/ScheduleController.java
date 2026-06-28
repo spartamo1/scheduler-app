@@ -3,6 +3,7 @@ package io.github.spartamo1.schedulerapp.domain.schedule.controller;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.CreateScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.DeleteScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.ScheduleDto;
+import io.github.spartamo1.schedulerapp.domain.schedule.dto.UpdateScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.service.ScheduleService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -41,7 +42,7 @@ public class ScheduleController {
 
     @PostMapping
     public ResponseEntity<ScheduleDto> create(
-            @RequestBody @Valid CreateScheduleDto createScheduleDto
+            @RequestBody CreateScheduleDto createScheduleDto
     ) {
         ScheduleDto scheduleDto = scheduleService.create(createScheduleDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(scheduleDto);
@@ -50,15 +51,15 @@ public class ScheduleController {
     @PutMapping("/{id}")
     public ScheduleDto modify(
             @PathVariable Integer id,
-            @RequestBody @Valid CreateScheduleDto createScheduleDto
+            @RequestBody UpdateScheduleDto updateScheduleDto
     ) {
-        return scheduleService.update(id, createScheduleDto);
+        return scheduleService.update(id, updateScheduleDto);
     }
 
     @DeleteMapping("/{id}")
     public void delete(
             @PathVariable Integer id,
-            @RequestBody @Valid DeleteScheduleDto deleteScheduleDto
+            @RequestBody DeleteScheduleDto deleteScheduleDto
     ) {
         scheduleService.deleteById(id, deleteScheduleDto.getPassword());
     }

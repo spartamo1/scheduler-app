@@ -4,6 +4,7 @@ import io.github.spartamo1.schedulerapp.domain.comment.dto.CommentDto;
 import io.github.spartamo1.schedulerapp.domain.comment.service.CommentService;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.CreateScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.ScheduleDto;
+import io.github.spartamo1.schedulerapp.domain.schedule.dto.UpdateScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.mapper.ScheduleMapper;
 import io.github.spartamo1.schedulerapp.entity.Schedule;
 import io.github.spartamo1.schedulerapp.repository.ScheduleRepository;
@@ -61,19 +62,20 @@ public class ScheduleService {
     }
 
     @Transactional
-    public ScheduleDto update(Integer id, CreateScheduleDto createScheduleDto) {
-        validateCreateScheduleDto(createScheduleDto);
+    public ScheduleDto update(Integer id, UpdateScheduleDto updateScheduleDto) {
+        validateUpdateScheduleDto(updateScheduleDto);
 
         Schedule schedule = scheduleRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Schedule not found with id: " + id));
 
-        if (!schedule.getPassword().equals(createScheduleDto.getPassword())) {
+        if (!schedule.getPassword().equals(updateScheduleDto.getPassword())) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "해당 스케줄을 수정할 권한이 없습니다.");
         }
 
-        schedule.setTitle(createScheduleDto.getTitle());
-//        schedule.setContent(createScheduleDto.getContent());
-        schedule.setCreatedBy(createScheduleDto.getCreatedBy());
+        if (validProperty(updateScheduleDto.getTitle()))
+            schedule.setTitle(updateScheduleDto.getTitle());
+        if (validProperty(updateScheduleDto.getCreatedBy()))
+            schedule.setCreatedBy(updateScheduleDto.getCreatedBy());
 
         Schedule savedSchedule = scheduleRepository.save(schedule);
         return scheduleMapper.toScheduleDto(savedSchedule);
@@ -81,7 +83,7 @@ public class ScheduleService {
 
     @Transactional
     public void deleteById(Integer id, String password) {
-        if (password == null || password.isBlank())
+        if (!validProperty(password))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "비밀번호는 필수 입력 값입니다.");
 
         Schedule schedule = scheduleRepository.findById(id)
@@ -94,14 +96,21 @@ public class ScheduleService {
         scheduleRepository.deleteById(id);
     }
 
+    private boolean validProperty(String value) {
+        return value != null && !value.isBlank();
+    }
+
     private void validateCreateScheduleDto(CreateScheduleDto dto) {
-        if (dto.getTitle() == null || dto.getTitle().isBlank())
+        if (!validProperty(dto.getPassword()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "비밀번호는 필수 입력 값입니다.");
+
+        if (!validProperty(dto.getTitle()))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "제목은 필수 입력 값입니다.");
 
-        if (dto.getContent() == null || dto.getContent().isBlank())
+        if (!validProperty(dto.getContent()))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "내용은 필수 입력 값입니다.");
 
-        if (dto.getCreatedBy() == null || dto.getCreatedBy().isBlank())
+        if (!validProperty(dto.getCreatedBy()))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "작성자는 필수 입력 값입니다.");
 
         if (dto.getTitle().length() > 30)
@@ -109,6 +118,14 @@ public class ScheduleService {
 
         if (dto.getContent().length() > 200)
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "내용은 200자 이하로 입력해야 합니다.");
+    }
+
+    private void validateUpdateScheduleDto(UpdateScheduleDto dto) {
+        if (!validProperty(dto.getPassword()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "비밀번호는 필수 입력 값입니다.");
+
+        if (!validProperty(dto.getTitle()) && !validProperty(dto.getCreatedBy()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "제목과 작성자 중 하나는 필수 입력 값입니다.");
     }
 
 }
