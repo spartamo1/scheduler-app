@@ -3,7 +3,6 @@ package io.github.spartamo1.schedulerapp.domain.comment.controller;
 import io.github.spartamo1.schedulerapp.domain.comment.dto.CommentDto;
 import io.github.spartamo1.schedulerapp.domain.comment.dto.CreateCommentDto;
 import io.github.spartamo1.schedulerapp.domain.comment.service.CommentService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

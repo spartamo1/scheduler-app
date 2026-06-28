@@ -5,7 +5,6 @@ import io.github.spartamo1.schedulerapp.domain.schedule.dto.DeleteScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.ScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.dto.UpdateScheduleDto;
 import io.github.spartamo1.schedulerapp.domain.schedule.service.ScheduleService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
