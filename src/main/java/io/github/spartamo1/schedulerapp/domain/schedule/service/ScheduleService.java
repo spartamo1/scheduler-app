@@ -77,8 +77,7 @@ public class ScheduleService {
         if (validProperty(updateScheduleDto.getCreatedBy()))
             schedule.setCreatedBy(updateScheduleDto.getCreatedBy());
 
-        Schedule savedSchedule = scheduleRepository.save(schedule);
-        return scheduleMapper.toScheduleDto(savedSchedule);
+        return scheduleMapper.toScheduleDto(schedule);
     }
 
     @Transactional
