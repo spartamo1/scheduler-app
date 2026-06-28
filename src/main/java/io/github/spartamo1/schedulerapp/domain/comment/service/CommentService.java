@@ -35,7 +35,7 @@ public class CommentService {
 
         // comment 가 10개 이상이면 throw err
         Integer commentCnt = commentRepository.countAllByScheduleId(schedule.getId());
-        if (commentCnt > 10)
+        if (commentCnt >= 10)
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "댓글을 더 이상 달 수 없습니다");
 
         Comment comment = commentMapper.toEntity(createCommentDto);
