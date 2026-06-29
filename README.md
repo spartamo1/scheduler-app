@@ -5,6 +5,10 @@
 [snapshot.json](./erd-snapshot.json)
 ![img_1.png](img_1.png)
 
+## Postman
+
+- [Postman Collection JSON](./postman_collection.json)
+
 ## API Specs
 
 ### GET /schedules/:id

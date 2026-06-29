@@ -1,0 +1,535 @@
+{
+  "info": {
+    "_postman_id": "7540aa71-34e5-43ba-880e-2c31ec68a35a",
+    "name": "OpenAPI definition Copy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12192143"
+  },
+  "item": [
+    {
+      "name": "schedules",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "get",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schedules/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "2313"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "2313"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"createdAt\": \"1995-10-27T07:15:21.960Z\",\n  \"updatedAt\": \"1951-12-10T18:25:14.449Z\",\n  \"title\": \"string\",\n  \"content\": \"string\",\n  \"createdBy\": \"string\",\n  \"comments\": [\n    {\n      \"createdAt\": \"2007-06-08T20:03:11.902Z\",\n      \"updatedAt\": \"1958-10-18T01:54:53.283Z\",\n      \"content\": \"string\",\n      \"createdBy\": \"string\"\n    },\n    {\n      \"createdAt\": \"2012-08-04T00:03:23.307Z\",\n      \"updatedAt\": \"1971-03-31T02:07:28.890Z\",\n      \"content\": \"string\",\n      \"createdBy\": \"string\"\n    }\n  ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "modify",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"string\",\n  \"createdBy\": \"string\",\n  \"password\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schedules/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "2313"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"title\": \"string\",\n  \"createdBy\": \"string\",\n  \"password\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "2313"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"createdAt\": \"1995-10-27T07:15:21.960Z\",\n  \"updatedAt\": \"1951-12-10T18:25:14.449Z\",\n  \"title\": \"string\",\n  \"content\": \"string\",\n  \"createdBy\": \"string\",\n  \"comments\": [\n    {\n      \"createdAt\": \"2007-06-08T20:03:11.902Z\",\n      \"updatedAt\": \"1958-10-18T01:54:53.283Z\",\n      \"content\": \"string\",\n      \"createdBy\": \"string\"\n    },\n    {\n      \"createdAt\": \"2012-08-04T00:03:23.307Z\",\n      \"updatedAt\": \"1971-03-31T02:07:28.890Z\",\n      \"content\": \"string\",\n      \"createdBy\": \"string\"\n    }\n  ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "delete",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"password\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schedules/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "2313"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"password\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "2313"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "{scheduleId}",
+          "item": [
+            {
+              "name": "comments",
+              "item": [
+                {
+                  "name": "create 1",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"content\": \"string\",\n  \"createdBy\": \"string\",\n  \"password\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/schedules/:scheduleId/comments",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "schedules",
+                        ":scheduleId",
+                        "comments"
+                      ],
+                      "variable": [
+                        {
+                          "key": "scheduleId",
+                          "value": "2313"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"content\": \"string\",\n  \"createdBy\": \"string\",\n  \"password\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/schedules/:scheduleId/comments",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "schedules",
+                            ":scheduleId",
+                            "comments"
+                          ],
+                          "variable": [
+                            {
+                              "key": "scheduleId",
+                              "value": "2313"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"createdAt\": \"2015-05-05T23:51:52.394Z\",\n  \"updatedAt\": \"1958-11-25T17:25:37.575Z\",\n  \"content\": \"string\",\n  \"createdBy\": \"string\"\n}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "get All",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/schedules?createdBy=string",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "schedules"
+              ],
+              "query": [
+                {
+                  "key": "createdBy",
+                  "value": "string"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/schedules?createdBy=string",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules"
+                  ],
+                  "query": [
+                    {
+                      "key": "createdBy",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"createdAt\": \"1972-12-28T08:05:01.645Z\",\n    \"updatedAt\": \"2005-05-21T17:28:37.256Z\",\n    \"title\": \"string\",\n    \"content\": \"string\",\n    \"createdBy\": \"string\",\n    \"comments\": [\n      {\n        \"createdAt\": \"1986-11-11T04:40:51.584Z\",\n        \"updatedAt\": \"2021-12-17T00:08:06.863Z\",\n        \"content\": \"string\",\n        \"createdBy\": \"string\"\n      },\n      {\n        \"createdAt\": \"1971-06-22T22:46:30.233Z\",\n        \"updatedAt\": \"1948-02-18T02:27:29.814Z\",\n        \"content\": \"string\",\n        \"createdBy\": \"string\"\n      }\n    ]\n  },\n  {\n    \"createdAt\": \"2015-08-18T04:46:09.538Z\",\n    \"updatedAt\": \"1998-05-27T04:02:42.453Z\",\n    \"title\": \"string\",\n    \"content\": \"string\",\n    \"createdBy\": \"string\",\n    \"comments\": [\n      {\n        \"createdAt\": \"1972-01-27T20:56:35.823Z\",\n        \"updatedAt\": \"2017-06-08T05:53:27.777Z\",\n        \"content\": \"string\",\n        \"createdBy\": \"string\"\n      },\n      {\n        \"createdAt\": \"1949-02-14T02:21:40.008Z\",\n        \"updatedAt\": \"2007-03-18T09:07:22.559Z\",\n        \"content\": \"string\",\n        \"createdBy\": \"string\"\n      }\n    ]\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"string\",\n  \"content\": \"string\",\n  \"createdBy\": \"string\",\n  \"password\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/schedules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "schedules"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"string\",\n  \"content\": \"string\",\n  \"createdBy\": \"string\",\n  \"password\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/schedules",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "schedules"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"createdAt\": \"1995-10-27T07:15:21.960Z\",\n  \"updatedAt\": \"1951-12-10T18:25:14.449Z\",\n  \"title\": \"string\",\n  \"content\": \"string\",\n  \"createdBy\": \"string\",\n  \"comments\": [\n    {\n      \"createdAt\": \"2007-06-08T20:03:11.902Z\",\n      \"updatedAt\": \"1958-10-18T01:54:53.283Z\",\n      \"content\": \"string\",\n      \"createdBy\": \"string\"\n    },\n    {\n      \"createdAt\": \"2012-08-04T00:03:23.307Z\",\n      \"updatedAt\": \"1971-03-31T02:07:28.890Z\",\n      \"content\": \"string\",\n      \"createdBy\": \"string\"\n    }\n  ]\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8080"
+    }
+  ]
+}
